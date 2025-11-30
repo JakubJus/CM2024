@@ -22,4 +22,5 @@ Follow the insturcions provided in the pdf file.
 
 ## Example
 Output you should see when connected to the sensor
+
 <img src="Graphs.png" alt="Example output" width="400"/>
