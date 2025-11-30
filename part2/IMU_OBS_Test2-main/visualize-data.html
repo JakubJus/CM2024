@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualize Sensor Data</title>
+    <style type="text/css">
+        html, body {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          overflow: hidden;
+          font-family: Arial, sans-serif;
+        }
+        #container {
+          position: relative;
+          width: 100vw;
+          height: calc(100vh - 40px);
+          box-sizing: border-box;
+        }
+        #canvasContainer {
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          bottom: 2px;
+          width: 100%;
+          height: 20%;
+          z-index: 2;
+        }
+        canvas {
+          border: 1px solid black;
+          width: 32%;
+          height: 100%;
+        }
+    
+        #heartRateContainer {
+          position: fixed;
+          top: 30px;
+          left: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+    
+        .heart {
+          width: 60px;
+          height: 60px;
+          background-color: red;
+          position: relative;
+          transform: rotate(-45deg);
+        }
+    
+        .heart:before,
+        .heart:after {
+          content: "";
+          width: 60px;
+          height: 60px; 
+          background-color: red;
+          border-radius: 50%;
+          position: absolute;
+        }
+    
+        .heart:before {
+          top: -30px;
+          left: 0;
+        }
+    
+        .heart:after {
+          top: 0;
+          left: 30px;
+        }
+    
+        .heart-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: rotate(45deg) translate(-65%, -35%);
+          font-size: 18px;
+          color: white;
+          font-weight: bold;
+          text-align: center;
+          z-index: 2;
+        }
+    
+        .shoe-container {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          background-color: white;
+          border: 1px solid black;
+          border-radius: 5px;
+        }
+    
+        .shoe-container img {
+          width: 50px;
+          height: auto;
+          margin-right: 10px;
+        }
+    
+        #cadenceText {
+          font-size: 16px;
+          color: black;
+          text-align: center;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="init();">
+
+    <div id="container">
+      <div id="canvasContainer">
+        <canvas id="AccCanvas"></canvas>
+        <canvas id="GyroCanvas"></canvas>
+        <canvas id="SensorFusion"></canvas>
+      </div>
+    </div>
+
+    <p>
+        <button onclick="startAndDisplay()">Start collecting data</button>
+        <button onclick="stopFetching()">Stop collecting data</button>
+        <!-- <button onclick="saveToFile()">Save to file</button> -->
+      </p>
+  
+    <div id="heartRateContainer">
+      <div class="heart">
+        <div class="heart-text" id="heartRate">N/A</div>
+      </div>
+      <div class="shoe-container">
+        <img src="img/black_shoe.png" alt="Running Shoe"></img>
+        <div id="cadenceText">Cadence: N/A</div>
+      </div>
+    </div>
+
+    <script src="fetch_display.js"></script>
+    <script src="filter.js"></script>
+</body>
+</html>
