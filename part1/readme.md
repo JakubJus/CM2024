@@ -10,7 +10,7 @@ This app reads data from your **Polar Verity Sense** or **Seeed IMU** sensor and
 
 ## How to Use
 
-1. Open `index.html` in your browser via a local server  
+1. Open `HTML5_PolarVeritySense_HT25.html` in your browser via a local server  
 2. You’ll see three canvases: **Accelerometer**, **Gyro**, and **Sensor Fusion**  
 3. Click **Start sensor** and select your sensor in the Bluetooth popup  
 4. Watch the live graphs update with your sensor data  
