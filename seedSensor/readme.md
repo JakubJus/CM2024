@@ -21,7 +21,9 @@
    - Via USB, the device powers automatically.  
    - **If using a battery**, you must **disconnect the Serial Communication (USB)** to avoid conflicts.
 
-## The onboard LED should blink to indicate the device is active, and can be connected.
+## The onboard LED should blink to indicate the device is active, and can be connected
 <img src="can_connect.gif" alt="Board Selection" width="400"/>
-## The onboard LED should blink slower when youre connected.
+
+## The onboard LED should blink slower when youre connected
+
 <img src="connected.gif" alt="Board Selection" width="400"/>
