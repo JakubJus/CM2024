@@ -18,4 +18,5 @@ This app reads data from your **Polar Verity Sense** or **Seeed IMU** sensor and
 6. Click **Save to file** to download the data as JSON
 
 ## Assigment
-Follow the instructions provided in the pdf file.
+Output you should see when connected to the sensor
+<img src="graphs.png" alt="Example output" width="400"/>
